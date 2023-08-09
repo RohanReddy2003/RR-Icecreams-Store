@@ -7,12 +7,12 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth import logout
 
 # Create your views here.
-def index(request):
+def home(request):
     print(request.user)
     if request.user.is_anonymous:
         return redirect("login")
     
-    return render(request, 'app1/index.html')
+    return render(request, 'app1/home.html')
 
 def loginUser(request):
     if request.method == "POST":
@@ -22,7 +22,7 @@ def loginUser(request):
         user = authenticate(username =username, password= password)
         if user is not None:
             login(request, user)
-            return redirect("index")
+            return redirect("home")
         else:
             return render(request,'app1/login.html')
 
