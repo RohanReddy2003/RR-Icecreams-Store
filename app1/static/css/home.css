@@ -1,0 +1,12 @@
+#card{
+    cursor: pointer;
+}
+
+#card:hover{
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+#card{
+    transition: 0.5s ease;
+}

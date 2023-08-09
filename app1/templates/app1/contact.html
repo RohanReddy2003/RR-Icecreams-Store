@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock title %} 
+
+{% block body %} 
+<div class="container-fluid px-0">
+    <img src="/static/images/10.jpeg" class="d-block w-100 mx-0">
+    
+</div>
+
+<div class="container d-flex justify-content-center align-items-center" style="position: absolute;top: 229px;left: -297px;">
+    <h1 style="left: 462px;top: -72px;position: absolute;font-size: 2.5rem;">Contact Us</h1>
+    <form  method="post" action="{% url 'contact' %}">
+    {% csrf_token %}
+      <div class="mb-20">
+        <label for="text" class="form-label">Name</label>
+        <input style="background-color: unset;" type="name" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name" name="name">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input style="background-color: unset;" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your email" name="email">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Your Query</label>
+        <textarea style="background-color: unset;" class="form-control" id="exampleFormControlTextarea1" rows="3" name="desc"></textarea>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+  </form>
+</div>
+
+{% endblock body %}
